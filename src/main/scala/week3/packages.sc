@@ -1,10 +1,7 @@
-import week3.Rational
+import week3._
 
 object scratch {
-
-  new Rational(1,5)
-
+  new Rational(5,10)
   def error(msg: String) = throw new Error(msg)
-
-  error("test")
+  if(true) 1 else false
 }
