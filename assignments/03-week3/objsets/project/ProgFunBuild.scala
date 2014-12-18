@@ -591,7 +591,7 @@ object ProgFunBuild extends Build {
      baseDirectory) map { (_, _, classpath, resources, testClasses, basedir) =>
       // we use `map`, so this is only executed if all dependencies succeed. no need to check `GradingFeedback.isFailed`
       val outfile = basedir / Settings.testResultsFileName
-      val policyFile = basedir / ".." / Settings.policyFileName
+      val policyFile = basedir / "" / Settings.policyFileName
       ScalaTestRunner.scalaTestGrade(classpath, testClasses, outfile, policyFile, copiedResourceFiles(resources))
   }
 
