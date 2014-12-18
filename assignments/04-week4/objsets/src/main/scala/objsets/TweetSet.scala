@@ -183,7 +183,7 @@ class NonEmpty(elem: Tweet, left: TweetSet, right: TweetSet) extends TweetSet {
   }
 
   def union(that: TweetSet) = {
-    ((left union right) union that) incl elem
+    right.union(left.union(that.incl(elem)))
   }
 
   /**
@@ -247,7 +247,7 @@ object GoogleVsApple {
 
   lazy val googleTweets: TweetSet = TweetReader.allTweets.mentions(google)
   lazy val appleTweets: TweetSet = TweetReader.allTweets.mentions(apple)
-
+  
   /**
    * A list of all tweets mentioning a keyword from either apple or google,
    * sorted by the number of retweets.
